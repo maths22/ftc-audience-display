@@ -1,0 +1,6 @@
+.text {
+  display: flex;
+  min-width: 0;
+
+  font-family: 'Allerta', sans-serif;
+}

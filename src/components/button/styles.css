@@ -1,0 +1,23 @@
+.button {
+  border-radius:  2.7vmin;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 1vmin;
+  padding: 0.5vmin 1vmin;
+  background: #f7f6f6;
+  border-color: #606060BF;
+  color: #232323;
+  border-width: 0.3vmin;
+  border-style: solid;
+}
+
+.button:focus {
+  outline: none;
+  border-color: #aaaaff;
+}
+
+.button:active {
+  background: #232323;
+  color: #f7f6f6;
+  border-color: #606060BF;
+}

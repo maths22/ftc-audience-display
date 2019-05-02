@@ -1,0 +1,56 @@
+.wrapper {
+  position: relative;
+  width: 100%
+}
+
+.phase {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 18vh;
+  width: 40vw;
+}
+
+.semiFinal {
+  top: 41vh;
+}
+
+.semiFinal1 {
+  left: 2vw;
+}
+
+.semiFinal2 {
+  right: 2vw;
+}
+
+.final {
+  margin: auto;
+  top: 17vh;
+  left: calc(50% - 20vw);
+}
+
+.winner {
+  position: absolute;
+  width: 40vw;
+  top: 2vh;
+  left: calc(50% - 20vw);
+}
+
+.leftArrow {
+  position: absolute;
+  top: 16vh;
+  left: 19vw;
+}
+
+.rightArrow {
+  position: absolute;
+  top: 26vh;
+  right: 19vw;
+}
+
+.upArrow {
+  position: absolute;
+  top: 3vh;
+  left: calc(50% - 5vw);
+}

@@ -1,0 +1,13 @@
+.scoreRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.miniImage {
+  display: block;
+  height: 5vh;
+  width: 5vh;
+}

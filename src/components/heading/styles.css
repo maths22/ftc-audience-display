@@ -1,0 +1,10 @@
+.heading {
+  line-height: 1em;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  display: flex;
+  min-width: 0;
+  flex: 1;
+
+  font-family: 'Allerta', sans-serif;
+}

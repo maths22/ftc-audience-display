@@ -1,0 +1,13 @@
+.die {
+  width: 15em;
+  height: 15em;
+  background: #f7f6f6;
+  border-radius: 10%;
+}
+
+.pip {
+  border-radius: 50%;
+  height: 3em;
+  width: 3em;
+  background: #232323;
+}

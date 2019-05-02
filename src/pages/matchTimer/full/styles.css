@@ -1,0 +1,30 @@
+.scoreWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.finalWrapper {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.scoreRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.miniImage {
+  display: block;
+  height: 6vh;
+  min-width: 6vh;
+  margin: 0 0.3vw;
+}

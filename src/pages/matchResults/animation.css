@@ -1,0 +1,180 @@
+.wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+.background {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.lander {
+
+  height: auto;
+  width: auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.blueLander {
+  animation-delay: 0.5s;
+  animation-duration: var(--blue-duration);
+  animation-name: blueTakeoff;
+  animation-fill-mode: both;
+}
+
+.blueHWrapper {
+  position: absolute;
+  left: 10vw;
+  top: 0;
+
+  animation-delay: 0.5s;
+  animation-duration: var(--blue-duration);
+  animation-name: blueHTakeoff;
+  animation-fill-mode: both;
+}
+
+.blueVWrapper {
+  position: absolute;
+  top: 50vh;
+
+  animation-delay: 0.5s;
+  animation-duration: var(--blue-duration);
+  animation-name: blueVTakeoff;
+  animation-fill-mode: both;
+}
+
+@keyframes blueTakeoff {
+  from {
+    animation-timing-function: cubic-bezier(.67,.09,.73,1);
+  }
+
+  85% {
+    animation-timing-function: ease-out;
+    transform: rotate(85deg);
+  }
+
+  to {
+    transform: rotate(85deg);
+  }
+}
+
+@keyframes blueVTakeoff {
+  from {
+    animation-timing-function: cubic-bezier(.43,0,.07,.99);
+    top: 50vh;
+    width: 30vw;
+  }
+
+  85% {
+    animation-timing-function: ease-out;
+    top: 18vh;
+    width: 4vw;
+  }
+
+  to {
+    top: 18vh;
+    width: 0;
+  }
+}
+
+@keyframes blueHTakeoff {
+  from {
+    animation-timing-function: cubic-bezier(.67,.09,.73,1);
+    left: 10vw;
+  }
+
+  85% {
+    animation-timing-function: ease-out;
+    left: 47vw;
+  }
+
+  to {
+    left: 50vw;
+  }
+}
+
+.redLander {
+  animation-delay: 0.5s;
+  animation-duration: var(--red-duration);
+  animation-name: redTakeoff;
+  animation-fill-mode: both;
+}
+
+.redHWrapper {
+  position: absolute;
+  left: 60vw;
+  top: 0;
+
+  animation-delay: 0.5s;
+  animation-duration: var(--red-duration);
+  animation-name: redHTakeoff;
+  animation-fill-mode: both;
+}
+
+.redVWrapper {
+  position: absolute;
+  top: 50vh;
+
+  animation-delay: 0.5s;
+  animation-duration: var(--red-duration);
+  animation-name: redVTakeoff;
+  animation-fill-mode: both;
+}
+
+@keyframes redTakeoff {
+  from {
+    animation-timing-function: cubic-bezier(.67,.09,.73,1);
+  }
+
+  85% {
+    animation-timing-function: ease-out;
+    transform: rotate(-85deg);
+  }
+
+  to {
+    transform: rotate(-85deg);
+  }
+}
+
+@keyframes redVTakeoff {
+  from {
+    animation-timing-function: cubic-bezier(.43,0,.07,.99);
+    top: 50vh;
+    width: 30vw;
+  }
+
+  85% {
+    animation-timing-function: ease-out;
+    top: 18vh;
+    width: 4vw;
+  }
+
+  to {
+    top: 18vh;
+    width: 0;
+  }
+}
+
+@keyframes redHTakeoff {
+  from {
+    animation-timing-function: cubic-bezier(.67,.09,.73,1);
+    left: 60vw;
+  }
+
+  85% {
+    animation-timing-function: ease-out;
+    left: 47vw;
+  }
+
+  to {
+    left: 50vw;
+  }
+}

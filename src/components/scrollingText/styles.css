@@ -1,0 +1,26 @@
+.span {
+  display: inline-block;
+  white-space: nowrap;
+  padding-bottom: 20px;
+  margin-bottom: -20px;
+}
+
+.wrapperDiv {
+  overflow: hidden;
+  display: inline-block;
+  padding-bottom: 20px;
+  margin-bottom: -20px;
+}
+
+@keyframes textScroll {
+  0%   {
+    -moz-transform: translateX(0%); /* Firefox bug fix */
+    -webkit-transform: translateX(0%); /* Firefox bug fix */
+    transform: translateX(0%);
+  }
+  100% {
+    -moz-transform: translateX(-50%); /* Firefox bug fix */
+    -webkit-transform: translateX(-50%); /* Firefox bug fix */
+    transform: translateX(-50%);
+  }
+}

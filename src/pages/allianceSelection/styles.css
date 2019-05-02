@@ -1,0 +1,27 @@
+.tableWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 1vh 0;
+  width: 50%;
+}
+
+.tableWrapper table {
+  color: #232323;
+  text-align: center;
+}
+
+.tableWrapper tr {
+  height: 4.2vh;
+}
+
+.tableWrapper th {
+  background: #d6d6d6;
+}
+
+.tableWrapper td {
+  background: #f7f6f6;
+}
+
+.disabled {
+  color: #aaaaaa;
+}

@@ -1,0 +1,46 @@
+.panel {
+  box-sizing: border-box;
+  border-radius:  2.7vmin;
+}
+
+.edges {
+  margin: 2.5vh 1.3vw;
+}
+
+.tightEdges {
+  margin: 1.5vh 1vw;
+}
+
+.tightEdges.noBorder {
+  padding: 1vmin;
+}
+
+.extraTightEdges {
+  margin: 1vh 1vw;
+}
+
+.extraTightEdges.noBorder {
+  padding: 1vmin;
+}
+
+.noBorder {
+  padding: 1.5vmin;
+}
+
+.border {
+  padding: 1vmin;
+  border-width: 0.75vmin;
+  border-style: solid;
+  border-color: #f7f6f6;
+}
+
+
+.verticalFlex {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontalFlex {
+  display: flex;
+  flex-direction: row;
+}

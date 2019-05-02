@@ -1,0 +1,50 @@
+.inputWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  border-radius:  2.7vmin;
+  box-sizing: border-box;
+  margin: 1vmin;
+  padding: 0.5vmin 1vmin;
+  border-color: #606060BF;
+  border-width: 0.3vmin;
+  border-style: solid;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: calc(24 / 1080 * 90vh);
+  background: #f7f6f6;
+
+
+  font-family: 'Allerta', sans-serif;
+}
+
+.input:disabled {
+  background: #DDDDDD;
+  color: #777777;
+}
+
+.input[type=checkbox] {
+  padding: 0.5vmin 0.5vmin;
+  width: 1.5em;
+  height: 1.5em;
+  box-sizing: content-box;
+}
+
+.input[type=checkbox]:checked {
+  background: #BBBBBB
+}
+
+.input[type=checkbox]:checked:after {
+  content: '\2714';
+  color: #f7f6f6;
+  position: relative;
+  top: 0.1em;
+  left: 0.4em;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #aaaaff;
+}
