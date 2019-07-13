@@ -65,7 +65,7 @@ export default class MatchTimer extends Component {
     timeDiff = timeDiff - 0.99
     let seconds = 0;
     if (timeDiff < 30) {
-      seconds = 60 * 3 - timeDiff;
+      seconds = 30 - timeDiff;
     } else if (timeDiff < 37) {
       seconds = 38 - timeDiff;
     } else {
@@ -132,7 +132,7 @@ export default class MatchTimer extends Component {
     if (this.props.actionType === 'SHOW_MATCH') {
       timeProps = {
         percentComplete: 0,
-        time: '3:00',
+        time: '0:30',
         period: 'stopped'
       }
     } else if (this.props.actionType === 'START_MATCH') {

@@ -16,7 +16,7 @@
   }
 }
 
-.tableWrapper {
+.tableWrapper, .tableWrapper table {
   font-size: calc(32 / 1080 * 90vh);
 }
 

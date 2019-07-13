@@ -68,29 +68,16 @@ export default class MatchResults extends Component {
   }
 
   renderAlliance(alliance, color) {
-    return alliance.map((t) => <Panel tight key={t.number} border={false} flex={'horizontal'} background={color} flexAlign='center'>
+    return alliance.map((t) => <Panel tight key={t.number} border={false} flex={'horizontal'} background={color} flexAlign='center' customStyles={{
+      border: t.card ? `1vmin ${t.card > 1 ? '#ff0000' : '#ffff33'} solid` : null,
+      height: '4vw'
+    }}>
       <Text size={40}>{t.number.toString()}</Text>
       <span style={{flex: 1, margin: '0 1vw', minWidth: '0px'}}><Text size={30}>{t.name}</Text></span>
       {t.rankMove ? <Text size={35}>{t.rankMove === 'up' ? '▲' : '▼'}</Text> : null}
       {t.ranking ? <Text size={45}>{t.ranking.toString()}</Text> : null}
     </Panel>)
   }
-  // autoParking: 0
-  // claimedDepot: 0
-  // depotMinerals: 0
-  // depotPlatinumMinerals: 0
-  // endParking: 0
-  // landed: 0
-  // landerAny: 0
-  // landerGold: 0
-  // landerPlatinum: 0
-  // landerSilver: 0
-  // latchedLander: 0
-  // majorPenalties: 0
-  // mineralSample: 0
-  // minorPenalties: 0
-  // totalPenaltyPoints: 0
-  // totalScore: 0
 
   calculateRoverRuckusBreakdown(color, br, otherBr) {
     console.log(br)
@@ -105,7 +92,7 @@ export default class MatchResults extends Component {
   renderAllianceResult(score, rrBreakdown, color, {isWin, isHighscore, scoreFirst, otherBreakdown}) {
     const breakdown = this.calculateRoverRuckusBreakdown(color, rrBreakdown, otherBreakdown)
     const winElem = isWin ? <Pill background={color.toLowerCase()}><Text size={40}>{color} Wins!</Text></Pill> : <span style={{width: '10em'}}></span>
-    const table = <table style={{textAlign: scoreFirst ? 'left' : 'right', marginBottom: '1vh'}}>
+    const table = <table style={{textAlign: scoreFirst ? 'left' : 'right', marginBottom: '1vh', color: '#F7F6F6'}}>
       <tbody>
       {breakdown.map((row) => {
         return <tr>
@@ -149,7 +136,7 @@ export default class MatchResults extends Component {
 
   render() {
     if(this.state.showAnimation) {
-      // return <MatchResultsAnimation {...this.props} />
+      return <MatchResultsAnimation {...this.props} />
     }
     return (
       <PrimaryLayout heading={this.renderHeading()} footer={this.renderFooter()} bodyFlex={'horizontal'}>

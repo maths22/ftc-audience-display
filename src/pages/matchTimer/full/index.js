@@ -62,9 +62,9 @@ export default class MatchTimer extends Component {
   }
 
   renderAlliance(alliance) {
-    return <div style={{display: 'flex', flexDirection: 'column', width: '11.5vh'}}>
+    return <div style={{display: 'flex', flexDirection: 'column', width: '12vh'}}>
       {alliance.map((t) =>
-        <Pill tight width='100%' flex={'vertical'} border={false} background={'extraLightGrey'} flexAlign='center'>
+        <Pill tight width='100%' flex={'vertical'} border={false} background={t.cardCarries ? ['#ffff33', '#232323'] : ['#f7f6f6', '#232323']} flexAlign='center'>
           <Text size={35} lineHeight="1em">{t.number}</Text>
         </Pill>)}
     </div>
@@ -82,14 +82,14 @@ export default class MatchTimer extends Component {
     if(this.props.period === 'aborted') return null;
     const score = (color === 'red' ? this.props.redScoreDetails : this.props.blueScoreDetails) || {};
     const autoPeriods = ['stopped', 'auto', 'pickup'];
-
+console.log(this.props.random)
     const random = this.props.random || 1;
     const blockRow = [blockPresent, blockAbsent];
     const ballRow = [ballPresent, ballAbsent];
     const rows = [
-      Math.floor((random - 1) % 3) === 0 ? blockRow : ballRow,
-      Math.floor((random - 1) % 3) === 1 ? blockRow : ballRow,
-      Math.floor((random - 1) % 3) === 2 ? blockRow : ballRow
+      random === 1 || random === 6 ? blockRow : ballRow,
+      random === 2 || random === 5 ? blockRow : ballRow,
+      random === 3 || random === 4 ? blockRow : ballRow
     ]
     const backLeftSampleFieldState = score.backLeftSampleFieldState !== null ? score.backLeftSampleFieldState : 7;
     const backRightSampleFieldState = score.backRightSampleFieldState !== null ? score.backRightSampleFieldState : 7;
@@ -150,14 +150,14 @@ export default class MatchTimer extends Component {
           <div className={styles.scoreRow} style={{flex: 1}}>
             <img src={color === 'red' ? landerRed : landerBlue} className={styles.miniImage}/>
             <img src={blockBall} className={styles.miniImage}/>
-            <span style={{flex: 1, paddingLeft: '0.75vw', textAlign: 'center'}}><Text size={40}>{(score.silver || 0)}</Text></span>
+            <span style={{flex: 1, paddingLeft: '0.75vw', textAlign: 'center'}}><Text size={40}>{(score.any || 0)}</Text></span>
           </div>
         </div>
         <div style={{display: 'flex', flexDirection: 'row', width: '100%'}}>
           <div className={styles.scoreRow} style={{flex: 1}}>
             <img src={color === 'red' ? landerRed : landerBlue} className={styles.miniImage}/>
             <img src={ballPresent} className={styles.miniImage} />
-            <span style={{flex: 1, paddingLeft: '0.75vw', textAlign: 'center'}}><Text size={40}>{(score.any || 0)}</Text></span>
+            <span style={{flex: 1, paddingLeft: '0.75vw', textAlign: 'center'}}><Text size={40}>{(score.silver || 0)}</Text></span>
           </div>
           <div className={styles.scoreRow} style={{flex: 1, background: color === 'red' ? '#FF5555BB' : '#44AAFFBB', borderRadius: '2vh'}}>
             <img src={color === 'red' ? landerRed : landerBlue} className={styles.miniImage}/>
@@ -216,7 +216,7 @@ export default class MatchTimer extends Component {
   render() {
     return (
       <PrimaryLayout heading={this.renderHeading()} footer={this.renderFooter()} bodyFlex={'horizontal'}>
-        {this.props.showComplete && false ?  this.renderComplete() : this.renderLive() }
+        {this.props.showComplete ?  this.renderComplete() : this.renderLive() }
       </PrimaryLayout>
     )
   }

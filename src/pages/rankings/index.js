@@ -111,7 +111,7 @@ export default class Rankings extends Component {
     return [
       <Heading size={70} align='left' key='queue'>{queueList && queueList.length > 0 ? 'Now Queuing: ' + queueList.join(', ') : ''}</Heading>,
       <div style={{flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-around', height: '100%', marginRight: '2vw'}} key={'stats'}>
-        <Text size={38} align='right'>{matchCount > 0 ? matchesPlayed + ' / ' + matchCount + ' matches played' : ''}</Text>
+        <Text size={38} align='right'>{matchCount > 0 ? (matchesPlayed || 0) + ' / ' + matchCount + ' matches played' : ''}</Text>
         <Text size={38} align='right'>{matchesPerTeam > 0 ? matchesPerTeam + ' matches/team' : ''}</Text>
       </div>
     ]

@@ -54,7 +54,10 @@ export default class MatchInformation extends Component {
   }
 
   renderAlliance(alliance, color) {
-    return alliance.map((t) => <Panel key={t.number} border={false} flex={'horizontal'} background={color} flexAlign='center'>
+    return alliance.map((t) => <Panel key={t.number} border={false} flex={'horizontal'} background={color} flexAlign='center' customStyles={{
+      border: t.cardCarries ? '1vmin #ffff33 solid' : null,
+      height: '6vw'
+    }}>
       <div style={{display: 'flex', flexDirection: 'column', minWidth: '0', flex: 1}}>
         <Text size={40}>{t.number.toString()}</Text>
         <Text size={30}>{t.name}</Text>

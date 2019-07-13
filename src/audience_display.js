@@ -12,7 +12,6 @@ import MatchTimer from './pages/matchTimer'
 import Randomization from './pages/randomization'
 import Blank from './pages/blank'
 import AllianceSelection from './pages/allianceSelection'
-import ReconnectingWebSocket from 'reconnecting-websocket'
 import {PersistentWebsocket} from 'persistent-websocket'
 import EliminationLadder from './pages/eliminationLadder'
 import Message from './pages/message'
@@ -26,14 +25,15 @@ const FIELD_TYPES = ['RANDOMIZE', 'SHOW_RANDOM', 'SHOW_MATCH', 'START_MATCH', 'A
 
 const LIVE_PERIODS = ['SHOW_MATCH', 'START_MATCH', 'ABORT_MATCH']
 
+const sampleEventKey = 'another_event'
 const generalSettings = window.generalSettings || {
   baseApiUrl: `http://${window.location.hostname}:8081/apiv1/`,
-  baseUrl: `http://${window.location.hostname}:8081/event/test_event_9/display/`,
+  baseUrl: `http://${window.location.hostname}:8081/event/${sampleEventKey}/display/`,
   timesyncUrl: `http://${window.location.hostname}:8081/display/timesync/`,
   liveUpdateUrl: `ws://${window.location.hostname}:8081/manage/display/stream/`,
   sponsorImageBase: `http://${window.location.hostname}:8081/img/sponsors/`,
   eventName: 'Test Event',
-  eventKey: 'test_event_9'
+  eventKey: sampleEventKey
 }
 
 export default class AudienceDisplay extends Component {

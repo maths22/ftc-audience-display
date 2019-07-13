@@ -159,13 +159,13 @@ export default class MatchTimerOverlay extends Component {
             </div>
             <div className={styles.scoreRow} style={{flex: 1}}>
               <img src={blockBall} className={styles.miniImage}/>
-              <span style={{flex: 1, paddingLeft: '0.75vw', textAlign: 'center'}}><Text size={40}>{(score.silver || 0)}</Text></span>
+              <span style={{flex: 1, paddingLeft: '0.75vw', textAlign: 'center'}}><Text size={40}>{(score.any || 0)}</Text></span>
             </div>
           </div>
           <div style={{display: 'flex', flexDirection: 'row', width: '100%'}}>
             <div className={styles.scoreRow} style={{flex: 1}}>
               <img src={ballPresent} className={styles.miniImage} />
-              <span style={{flex: 1, paddingLeft: '0.75vw', textAlign: 'center'}}><Text size={40}>{(score.any || 0)}</Text></span>
+              <span style={{flex: 1, paddingLeft: '0.75vw', textAlign: 'center'}}><Text size={40}>{(score.silver || 0)}</Text></span>
             </div>
             <div className={styles.scoreRow} style={{flex: 1, background: color === 'red' ? '#FF5555BB' : '#44AAFFBB', borderRadius: '2vh'}}>
               <img src={blockBall} className={styles.miniImage} />
