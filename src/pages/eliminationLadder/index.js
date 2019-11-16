@@ -30,7 +30,7 @@ export default class EliminationLadder extends Component {
   }
 
   allianceToTeams(alliance) {
-    return Object.keys(alliance).filter((k) => k.match(/^team[0-9]$/)).map((k) => alliance[k].data.number)
+    return Object.keys(alliance).filter((k) => k.match(/^team[0-9]$/) && alliance[k]).map((k) => alliance[k].data.number)
   }
 
   renderStage(data) {

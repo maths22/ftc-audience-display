@@ -53,7 +53,7 @@ export default class ScrollingTable extends Component {
   }
 
   renderRow (data, key) {
-    return <tr key={key} style={{background: this.props.colorCol ? data[this.props.colorCol] : null}}>
+    return <tr key={key} style={{background: this.props.colorCol ? data[this.props.colorCol][0] : null, color: this.props.colorCol ? data[this.props.colorCol][1] : null}}>
       {this.props.columns.map((col) => <td style={{width: col.width}} key={col.field}>{data[col.field]}</td>)}
     </tr>
   }

@@ -27,8 +27,8 @@ export default class Pill extends Component {
       darkGrey: ['#606060BF', '#F7F6F6'],
       lightGrey: ['#BBBBBB', '#232323'],
       extraLightGrey: ['#f7f6f6', '#232323'],
-      red: ['#FF5555', '#232323'],
-      blue: ['#44AAFF', '#232323'],
+      red: ['#FF5555', '#F7F6F6'],
+      blue: ['#3264FF', '#F7F6F6'],
     }[background]
 
     return (

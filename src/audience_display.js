@@ -25,7 +25,7 @@ const FIELD_TYPES = ['RANDOMIZE', 'SHOW_RANDOM', 'SHOW_MATCH', 'START_MATCH', 'A
 
 const LIVE_PERIODS = ['SHOW_MATCH', 'START_MATCH', 'ABORT_MATCH']
 
-const sampleEventKey = 'another_event'
+const sampleEventKey = 'alliance_selection_testing_2'
 const generalSettings = window.generalSettings || {
   baseApiUrl: `http://${window.location.hostname}:8081/apiv1/`,
   baseUrl: `http://${window.location.hostname}:8081/event/${sampleEventKey}/display/`,

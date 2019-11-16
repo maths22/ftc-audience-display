@@ -173,7 +173,7 @@ export default class Rankings extends Component {
               const isBlueWin = m.blueScore > m.redScore;
               return Object.assign({}, m, {
                 result: m.redScore + '-' + m.blueScore + ' ' + (isRedWin ? 'R' : (isBlueWin ? 'B' : 'T')),
-                color: (isRedWin ? '#FF5555' : (isBlueWin ? '#44AAFF' : null))
+                color: (isRedWin ? ['#FF5555', '#F7F6F6'] : (isBlueWin ? ['#3264FF', '#F7F6F6'] : null))
               })
             })}
           />

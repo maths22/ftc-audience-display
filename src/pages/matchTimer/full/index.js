@@ -72,7 +72,8 @@ export default class MatchTimer extends Component {
 
   renderAllianceResult(score, color) {
     return <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', height: '100%'}}>
-        <Pill width='18vh' flex={'vertical'} border={false} background={color.toLowerCase()} flexAlign='center' customStyles={{alignSelf: 'flex-end'}}>
+        <Pill flex={'vertical'} border={false} background={color.toLowerCase()} flexAlign='center'
+              customStyles={{alignSelf: 'flex-end', minWidth: '18vh'}}>
           <Text size={80} lineHeight="1em">{score.toString()}</Text>
         </Pill>
       </div>
@@ -91,11 +92,10 @@ console.log(this.props.random)
       random === 2 || random === 5 ? blockRow : ballRow,
       random === 3 || random === 4 ? blockRow : ballRow
     ]
-    const backLeftSampleFieldState = score.backLeftSampleFieldState !== null ? score.backLeftSampleFieldState : 7;
-    const backRightSampleFieldState = score.backRightSampleFieldState !== null ? score.backRightSampleFieldState : 7;
-    const frontLeftSampleFieldState = score.frontLeftSampleFieldState !== null ? score.frontLeftSampleFieldState : 7;
-    const frontRightSampleFieldState = score.frontRightSampleFieldState !== null ? score.frontRightSampleFieldState : 7;
-
+    const backLeftSampleFieldState = score.backLeftSampleFieldState !== undefined ? score.backLeftSampleFieldState : 7;
+    const backRightSampleFieldState = score.backRightSampleFieldState !== undefined ? score.backRightSampleFieldState : 7;
+    const frontLeftSampleFieldState = score.frontLeftSampleFieldState !== undefined ? score.frontLeftSampleFieldState : 7;
+    const frontRightSampleFieldState = score.frontRightSampleFieldState !== undefined ? score.frontRightSampleFieldState : 7;
     return <>
         <Text size={40}>Auto</Text>
         <div style={{display: 'flex', flexDirection: 'row', width: '100%'}}>
@@ -128,14 +128,14 @@ console.log(this.props.random)
 
         <div style={{display: 'flex', flexDirection: 'row', width: '25vh'}}>
           <div className={styles.scoreRow} style={{flex: 1}}>
-            <div style={{borderStyle: 'solid', borderWidth: '0.5vh', marginRight: '1vw', borderColor: color === 'red' ? '#FF5555' : '#44AAFF', height: '5vh', width: '5vh'}}/>
+            <div style={{borderStyle: 'solid', borderWidth: '0.5vh', marginRight: '1vw', borderColor: color === 'red' ? '#FF5555' : '#3264FF', height: '5vh', width: '5vh'}}/>
             <img src={blockBall} className={styles.miniImage}/>
             <span style={{flex: 1, paddingLeft: '0.75vw', textAlign: 'center'}}><Text size={40}>{score.depot || 0}</Text></span>
           </div>
         </div>
         <div style={{display: 'flex', flexDirection: 'row', width: '25vh'}}>
-          <div style={{borderStyle: 'solid', borderWidth: '0.5vh', marginRight: '1vw', borderColor: color === 'red' ? '#FF5555' : '#44AAFF', height: '5vh', width: '5vh'}}/>
-          <div className={styles.scoreRow} style={{flex:1, background: color === 'red' ? '#FF5555BB' : '#44AAFFBB', borderRadius: '2vh'}}>
+          <div style={{borderStyle: 'solid', borderWidth: '0.5vh', marginRight: '1vw', borderColor: color === 'red' ? '#FF5555' : '#3264FF', height: '5vh', width: '5vh'}}/>
+          <div className={styles.scoreRow} style={{flex:1, background: color === 'red' ? '#FF5555BB' : '#3264FFBB', borderRadius: '2vh'}}>
             <img src={blockBall} className={styles.miniImage} />
             <span style={{flex: 1, paddingLeft: '0.75vw', textAlign: 'center'}}><Text size={40}>{score.depotPlatinum || 0}</Text></span>
           </div>
@@ -159,7 +159,7 @@ console.log(this.props.random)
             <img src={ballPresent} className={styles.miniImage} />
             <span style={{flex: 1, paddingLeft: '0.75vw', textAlign: 'center'}}><Text size={40}>{(score.silver || 0)}</Text></span>
           </div>
-          <div className={styles.scoreRow} style={{flex: 1, background: color === 'red' ? '#FF5555BB' : '#44AAFFBB', borderRadius: '2vh'}}>
+          <div className={styles.scoreRow} style={{flex: 1, background: color === 'red' ? '#FF5555BB' : '#3264FFBB', borderRadius: '2vh'}}>
             <img src={color === 'red' ? landerRed : landerBlue} className={styles.miniImage}/>
             <img src={blockBall} className={styles.miniImage} />
             <span style={{flex: 1, paddingLeft: '0.75vw', textAlign: 'center'}}><Text size={40}>{(score.ownAnyPlatinum || 0) + (score.ownFrontGoldPlatinum || 0) + (score.ownBackGoldPlatinum || 0) + (score.ownSilverPlatinum || 0)

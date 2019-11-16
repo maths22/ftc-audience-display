@@ -29,7 +29,7 @@ export default class MatchInformation extends Component {
   }
 
   renderRecordPanel(myRecord, otherRecord, color) {
-    if(!myRecord) return;
+    if(!myRecord && !otherRecord) return;
 
     const isVictor = myRecord > otherRecord;
 

@@ -43,7 +43,7 @@ export default class MatchResults extends Component {
   state = { showAnimation: false }
 
   renderRecordPanel(myRecord, otherRecord, color, seriesWon) {
-    if(!myRecord) return;
+    if(!myRecord && !otherRecord) return;
 
     const isVictor = myRecord > otherRecord;
 
@@ -108,8 +108,8 @@ export default class MatchResults extends Component {
       <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
         {scoreFirst ? null : winElem}
         {scoreFirst ? table : null}
-        <Pill tight width='18vh' border={false} background={color.toLowerCase()} height='12vh'
-              customStyles={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+        <Pill tight border={false} background={color.toLowerCase()} height='12vh'
+              customStyles={{display: 'flex', flexDirection: 'column', justifyContent: 'center', minWidth: '18vh'}}>
           <Text size={80} lineHeight="1em">{score.toString()}</Text>
           <Text size={30}>{isHighscore ? 'High Score!' : null}</Text>
         </Pill>

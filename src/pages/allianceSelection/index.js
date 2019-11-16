@@ -60,22 +60,23 @@ export default class AllianceSelection extends Component {
   }
 
   render() {
-    const alliances = this.props.state.alliances || [[null, null, null, null], [null, null, null, null], [null, null, null, null], [null, null, null, null]]
+    const alliances = this.props.state.alliances || [[null, null, null], [null, null, null], [null, null, null], [null, null, null]]
+    const maxNonNullLength = Math.max(...alliances.map((r) => r.filter((x) => x).length))
 
     const chunkedTeams = this.chunkedTeams()
     return (
       <PrimaryLayout heading={this.renderHeading()} footer={this.renderFooter()} bodyFlex={'horizontal'}>
         <div className={styles.tableWrapper} style={{margin: '0 2vw'}}>
-          <AllianceBar isHeader teamCount={4}/>
-          {alliances.map((val, idx) => <div style={{flex: 1}}><AllianceBar seed={idx + 1} teams={val.map((t) => t ? t.number : null)} /></div>)}
+          <AllianceBar isHeader teamCount={Math.max(3, maxNonNullLength)}/>
+          {alliances.map((val, idx) => <div style={{flex: 1}}><AllianceBar seed={idx + 1} teamCount={Math.max(3, maxNonNullLength)} teams={val.map((t) => t ? t.number : null)} /></div>)}
         </div>
         <div className={styles.tableWrapper} style={{margin: '0 2vw'}}>
             <table>
               <thead>
                 <tr>
                   {chunkedTeams.map(() => [
-                    <th key={1} style={{minWidth: '4em'}}><Text size={30}>Team</Text></th>,
-                    <th key={2} style={{minWidth: '5em'}}><Text size={30}>Rank</Text></th>
+                    <th key={1} style={{minWidth: '4em'}}><Text size={30}>Rank</Text></th>,
+                    <th key={2} style={{minWidth: '5em'}}><Text size={30}>Team</Text></th>
                   ])}
                 </tr>
               </thead>

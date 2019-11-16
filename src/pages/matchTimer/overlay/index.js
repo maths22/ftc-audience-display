@@ -73,7 +73,8 @@ export default class MatchTimerOverlay extends Component {
   renderAllianceResult(score, color) {
     return <div style={{margin: 'auto 1.3vw 0 1.3vw', flex: '1'}}>
       <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-        <Pill width='8em' flex={'vertical'} border={false} background={color.toLowerCase()} flexAlign='center'>
+        <Pill flex={'vertical'} border={false} background={color.toLowerCase()} flexAlign='center'
+           customStyles={{minWidth: '18vh'}}>
           <Text size={80} lineHeight="1em">{score.toString()}</Text>
         </Pill>
       </div>
@@ -96,14 +97,14 @@ export default class MatchTimerOverlay extends Component {
       const blockRow = [blockPresent, blockAbsent];
       const ballRow = [ballPresent, ballAbsent];
       const rows = [
-        Math.floor((random - 1) % 3) === 0 ? blockRow : ballRow,
-        Math.floor((random - 1) % 3) === 1 ? blockRow : ballRow,
-        Math.floor((random - 1) % 3) === 2 ? blockRow : ballRow
+        random === 1 || random === 6 ? blockRow : ballRow,
+        random === 2 || random === 5 ? blockRow : ballRow,
+        random === 3 || random === 4 ? blockRow : ballRow
       ]
-      const backLeftSampleFieldState = score.backLeftSampleFieldState !== null ? score.backLeftSampleFieldState : 7;
-      const backRightSampleFieldState = score.backRightSampleFieldState !== null ? score.backRightSampleFieldState : 7;
-      const frontLeftSampleFieldState = score.frontLeftSampleFieldState !== null ? score.frontLeftSampleFieldState : 7;
-      const frontRightSampleFieldState = score.frontRightSampleFieldState !== null ? score.frontRightSampleFieldState : 7;
+      const backLeftSampleFieldState = score.backLeftSampleFieldState !== undefined ? score.backLeftSampleFieldState : 7;
+      const backRightSampleFieldState = score.backRightSampleFieldState !== undefined ? score.backRightSampleFieldState : 7;
+      const frontLeftSampleFieldState = score.frontLeftSampleFieldState !== undefined ? score.frontLeftSampleFieldState : 7;
+      const frontRightSampleFieldState = score.frontRightSampleFieldState !== undefined ? score.frontRightSampleFieldState : 7;
 
       return <Panel extraTight height={23} width={30} flex={'vertical'} flexAlign={'center'}>
         <Text size={35}>Auto</Text>
@@ -144,7 +145,7 @@ export default class MatchTimerOverlay extends Component {
             </div>
           </div>
           <div style={{display: 'flex', flexDirection: 'row', width: '100%'}}>
-            <div className={styles.scoreRow} style={{flex:1, background: color === 'red' ? '#FF5555BB' : '#44AAFFBB', borderRadius: '2vh'}}>
+            <div className={styles.scoreRow} style={{flex:1, background: color === 'red' ? '#FF5555BB' : '#3264FFBB', borderRadius: '2vh'}}>
               <img src={blockBall} className={styles.miniImage} />
               <span style={{flex: 1, paddingLeft: '0.75vw', textAlign: 'center'}}><Text size={40}>{score.depotPlatinum || 0}</Text></span>
             </div>
@@ -167,7 +168,7 @@ export default class MatchTimerOverlay extends Component {
               <img src={ballPresent} className={styles.miniImage} />
               <span style={{flex: 1, paddingLeft: '0.75vw', textAlign: 'center'}}><Text size={40}>{(score.silver || 0)}</Text></span>
             </div>
-            <div className={styles.scoreRow} style={{flex: 1, background: color === 'red' ? '#FF5555BB' : '#44AAFFBB', borderRadius: '2vh'}}>
+            <div className={styles.scoreRow} style={{flex: 1, background: color === 'red' ? '#FF5555BB' : '#3264FFBB', borderRadius: '2vh'}}>
               <img src={blockBall} className={styles.miniImage} />
               <span style={{flex: 1, paddingLeft: '0.75vw', textAlign: 'center'}}><Text size={40}>{(score.ownAnyPlatinum || 0) + (score.ownFrontGoldPlatinum || 0) + (score.ownBackGoldPlatinum || 0) + (score.ownSilverPlatinum || 0)
                + (score.theirAnyPlatinum || 0) + (score.theirFrontGoldPlatinum || 0) + (score.theirBackGoldPlatinum || 0) + (score.theirSilverPlatinum || 0)}</Text></span>

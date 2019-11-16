@@ -18,11 +18,14 @@ export default class AllianceBar extends Component {
   render() {
     const teams = this.props.teams || Array.from({length: this.props.teamCount },(v,k)=> this.props.isHeader ? (k === 0 ? 'Captain' : 'Pick ' + k) : '\u00a0')
 
+    const nonNullTeams = teams.filter(t => t)
+    const trimmedTeams = nonNullTeams.concat(Array.from({length: this.props.teamCount - nonNullTeams.length}, (v,k) => '\u00a0'))
+
     return (
       <Pill tight background={this.props.isHeader ? [null, null] : this.props.color || 'extraLightGrey'} width="100%">
         <div className={styles.rowWrapper}>
           <Pill extraTight background={!this.props.seed || this.props.isHeader ? [null, null] : 'darkGrey'} width="6vh"><Text size={45}>{this.props.seed || '\u00a0'}</Text></Pill>
-          {teams.map((t) =>
+          {trimmedTeams.map((t) =>
             <div className={styles.teamNumber}><Text size={43}>{t || ''}</Text></div>
           )}
           {typeof this.props.record === 'number' ? <Pill extraTight background={'lightGrey'} width="6vh"><Text size={45}>{this.props.record}</Text></Pill> : null}

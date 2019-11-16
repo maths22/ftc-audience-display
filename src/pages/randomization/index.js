@@ -64,13 +64,24 @@ export default class Randomization extends Component {
 
 
   render() {
+    let val;
+    const random = this.props.random;
+    if(random === 1 || random === 6) {
+      val = 0;
+    }
+    if(random === 2 || random === 5) {
+      val = 1;
+    }
+    if(random === 3 || random === 4) {
+      val = 2;
+    }
     return (
       <PrimaryLayout heading={this.renderHeading()} footer={this.renderFooter()} bodyFlex={'horizontal'}>
         <div className={styles.tableWrapper} style={{fontSize: '3.5vh'}}>
           <Die number={this.props.random} />
         </div>
         <div className={styles.tableWrapper} style={{fontSize: '3.5vh'}}>
-          <RandomDisplay location={Math.floor((this.props.random - 1) % 3)} />
+          <RandomDisplay location={val} />
         </div>
       </PrimaryLayout>
     )
