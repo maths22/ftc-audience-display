@@ -12,8 +12,26 @@ import OverlayLayout from '../../../layout/overlay'
 export default class AwardsOverlay extends Component {
   static propTypes = {
     eventName: PropTypes.string,
-    time: PropTypes.string,
-    allianceTimeout: PropTypes.string
+    actionType: PropTypes.string,
+    isRobotGameAward: PropTypes.bool,
+    award: PropTypes.shape({
+      teamAward: PropTypes.bool,
+      winnerTeam: PropTypes.shape({
+        number: PropTypes.string,
+        name: PropTypes.string,
+      }),
+      winnerName: PropTypes.string,
+      secondTeam: PropTypes.shape({
+        number: PropTypes.string,
+        name: PropTypes.string,
+      }),
+      secondName: PropTypes.string,
+      thirdTeam: PropTypes.shape({
+        number: PropTypes.string,
+        name: PropTypes.string,
+      }),
+      thirdName: PropTypes.string,
+    })
   }
 
   renderHeading() {

@@ -25,6 +25,7 @@ import ScrollingTable from '../components/scrollingTable'
 import Rankings from '../pages/rankings'
 import Die from '../components/die'
 import MatchResultsAnimation from '../pages/matchResults/animation'
+import Awards from '../pages/awards'
 
 storiesOf('AudienceDisplay', module).add('display', () => <AudienceDisplay />)
 
@@ -179,6 +180,50 @@ storiesOf('pages/MatchInformation', module)
         ranking: 11
       }
     ]} />)
+
+storiesOf('pages/Award', module)
+  .add('Award', () => <Awards
+    eventName='Illinois State Championship'
+    actionType='SHOW_SECOND'
+    isRobotGameAward={false}
+    award={{
+      teamAward: true,
+      name: 'Example Award',
+      firstTeam: { data: {
+          number: '4321',
+          name: 'Team Robot'
+        } },
+      secondTeam: { data: {
+          number: '1234',
+          name: 'Robot Team'
+        } },
+      thirdTeam: { data: {
+          number: '1234',
+          name: 'FTC Team'
+        } }
+    }}
+  />)
+  .add('Award (overlay)', () => <Awards
+    overlayEnabled
+    eventName='Illinois State Championship'
+    actionType='SHOW_SECOND'
+    isRobotGameAward={false}
+    award={{
+      teamAward: true,
+      name: 'Example Award',
+      firstTeam: { data: {
+          number: '4321',
+          name: 'Team Robot'
+        } },
+      secondTeam: { data: {
+          number: '1234',
+          name: 'Robot Team'
+        } },
+      thirdTeam: { data: {
+          number: '1234',
+          name: 'FTC Team'
+        } }
+    }} />)
 
 storiesOf('pages/MatchResultsAnimation', module)
   .add('Elim match', () => <MatchResultsAnimation
