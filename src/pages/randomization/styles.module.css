@@ -1,0 +1,7 @@
+.tableWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh 0;
+  width: 50%;
+}

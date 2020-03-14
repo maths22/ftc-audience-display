@@ -1,0 +1,68 @@
+.button {
+  position: absolute;
+  right: 2vmin;
+  top: 2vmin;
+  z-index: 50;
+  background: #232323;
+  padding: 0.5vmin;
+  border-radius:  2.7vmin;
+  border: 0.25vmin solid #f7f6f6;
+  line-height: 0;
+  opacity: 0;
+
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.buttonIn {
+  opacity: 1;
+}
+
+.button:focus {
+  outline: none;
+  border-color: #aaaaff;
+}
+
+.button:active {
+  background: #f7f6f6;
+  border-color: #606060BF;
+}
+
+.button svg {
+  height: calc(50 / 1080 * 90vh);
+  width: calc(50 / 1080 * 90vh);
+  fill: #f7f6f6;
+}
+
+.button:active svg {
+  fill: #232323;
+}
+
+.dialog {
+  min-width: 30vw;
+
+  padding: 2vh 2vw;
+  background: #f7f6f6;
+  border-radius:  2.7vmin;
+  border: 0.25vmin solid #232323;
+
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.modalOverlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 75;
+  background: #eeeeee66;
+}

@@ -13,11 +13,11 @@ npm install --save ftc-audience-display
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import * as React from 'react'
 
 import MyComponent from 'ftc-audience-display'
 
-class Example extends Component {
+class Example extends React.Component {
   render () {
     return (
       <MyComponent />

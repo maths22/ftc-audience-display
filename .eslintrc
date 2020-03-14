@@ -18,6 +18,15 @@
     "space-before-function-paren": 0,
 
     // allow specifying true explicitly for boolean props
-    "react/jsx-boolean-value": 0
+    "react/jsx-boolean-value": 0,
+
+    "react/prop-types": "off",
+    // This isn't useful for a display
+    "jsx-a11y/alt-text": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
